@@ -12,8 +12,8 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="AssemblyInfo.cs" />
-		<Compile Include="COMObject.cs" />
-		<Compile Include="ICOMObject.cs" />
+		<Compile Include="SimpleComObject.cs" />
+		<Compile Include="ISimpleComObject.cs" />
 		<None Include="definitions.idl" />
 		<PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
 		<PackageReference Include="StyleCop.Analyzers.Unstable" Version="1.2.0.321">

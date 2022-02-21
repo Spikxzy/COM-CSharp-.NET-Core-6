@@ -3,9 +3,9 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: ComVisible(true)]
-[assembly: Guid(COMEarlyBinding.AssemblyInfo.LibraryGuid)]
+[assembly: Guid(SimpleComProject.AssemblyInfo.LibraryGuid)]
 
-namespace COMEarlyBinding
+namespace SimpleComProject
 {
     internal class AssemblyInfo
     {

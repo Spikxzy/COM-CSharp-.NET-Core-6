@@ -3,7 +3,7 @@
 	version(1.0),
 	helpstring("SimpleComObjectTLB")
 ]
-library ComTestLibrary
+library SimpleComObjectTLB
 {
 	importlib("STDOLE2.TLB");
 
@@ -13,10 +13,10 @@ library ComTestLibrary
 		dual,
 		oleautomation,
 		nonextensible,
-		helpstring("ICOMObject"),
+		helpstring("ISimpleComObject"),
 		object
 	]
-	interface ICOMObject : IDispatch
+	interface ISimpleComObject : IDispatch
 	{
 		[
 			id(1),
@@ -37,9 +37,9 @@ library ComTestLibrary
 
 	[
 		uuid(12882A6C-7176-47BF-8F39-7C029B9350A2),
-		helpstring("COMObject")
+		helpstring("SimpleComObject")
 	]
-	coclass COMObject
+	coclass SimpleComObject
 	{
 		[default] interface ICOMObject;
 	};

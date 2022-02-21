@@ -1,12 +1,12 @@
-﻿using System;
-using System.Runtime.InteropServices;
-
-namespace COMEarlyBinding
+﻿namespace SimpleComProject
 {
+    using System;
+    using System.Runtime.InteropServices;
+
     [ComImport]
     [Guid(AssemblyInfo.InterfaceGuid)]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface ICOMObject
+    public interface ISimpleComObject
     {
         double Addition(double firstValue, double secondValue);
         string HelloWorld();

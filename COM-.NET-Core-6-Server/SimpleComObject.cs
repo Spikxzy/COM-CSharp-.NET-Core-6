@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 
 using Microsoft.Win32;
 
-namespace COMEarlyBinding
+namespace SimpleComProject
 {
     [ComVisible(true)]
     [Guid(AssemblyInfo.ClassGuid)]
     [ClassInterface(ClassInterfaceType.None)]
     [ProgId("SimpleComObject")]
-    public class COMObject : ICOMObject
+    public class SimpleComObject : ISimpleComObject
     {
         public double Addition(double firstValue, double secondValue)
         {
