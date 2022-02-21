@@ -41,6 +41,6 @@ library SimpleComObjectTLB
 	]
 	coclass SimpleComObject
 	{
-		[default] interface ICOMObject;
+		[default] interface ISimpleComObject;
 	};
 }
