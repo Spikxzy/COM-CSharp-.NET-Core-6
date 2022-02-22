@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<CLVersion>14.29.30037</CLVersion>
+		<CLVersion>14.31.31103</CLVersion>
 		<DriveLetter>N:</DriveLetter>
 		<KitsVersion>10.0.19041.0</KitsVersion>
 		<VSVersion>2022\Professional</VSVersion>
+		<VSLocation>Program Files</VSLocation>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="AssemblyInfo.cs" />
@@ -29,7 +30,7 @@
 		<PathKitsBin>c:\Program Files (x86)\Windows Kits\10\bin\$(KitsVersion)</PathKitsBin>
 		<PathKitsInclude>C:\Program Files (x86)\Windows Kits\10\include\$(KitsVersion)</PathKitsInclude>
 		<MidlOptions>
-			/cpp_cmd "C:\CL_Compiler\x64\cl.exe"
+			/cpp_cmd "$(DriveLetter)\cl.exe"
 			/dlldata nul /h nul /iid nul /proxy nul
 			/env $(Platform.Replace("x86", "win32").Replace("x64", "win64"))
 			/I "$(PathKitsInclude)\um\64"
@@ -43,7 +44,7 @@
 
 	<Target AfterTargets="PostBuildEvent" Name="PostBuild">
 		<WriteLinesToFile File="$(TargetDir)midloptions.txt" Overwrite="true" Lines="$(MidlOptions)" />
-		<Exec IgnoreExitCode="true" Command="subst $(DriveLetter) &quot;C:\Program Files (x86)\Microsoft Visual Studio\$(VSVersion)\VC\Tools\MSVC\$(CLVersion)\bin\Hostx64\x64&quot;" />
+		<Exec IgnoreExitCode="true" Command="subst $(DriveLetter) &quot;C:\$(VSLocation)\Microsoft Visual Studio\$(VSVersion)\VC\Tools\MSVC\$(CLVersion)\bin\Hostx64\x64&quot;" />
 		<Exec command="&quot;$(PathKitsBin)\x64\midl.exe&quot; @$(TargetDir)midloptions.txt&quot;" />
 		<!-- The .dll and .tlb can be registered automatically if this <Exec> tag is not commented out.
 		<Exec command="regsvr32 /s &quot;$(TargetDir)$(TargetName).comhost.dll&quot;" />
