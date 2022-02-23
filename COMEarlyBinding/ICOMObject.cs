@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace COMEarlyBinding
 {
-    [ComVisible(true)]
+    [ComImport]
     [Guid(AssemblyInfo.InterfaceGuid)]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ICOMObject

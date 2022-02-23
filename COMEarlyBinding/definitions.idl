@@ -1,7 +1,7 @@
 ﻿[
 	uuid(6CAE0A24-8102-4070-A049-7AF0546E1419),
 	version(1.0),
-	helpstring("COMEarlyBinding")
+	helpstring("SimpleComObjectTLB")
 ]
 library ComTestLibrary
 {

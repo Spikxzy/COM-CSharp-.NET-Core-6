@@ -17,14 +17,5 @@ namespace COMEarlyBinding
 
 		/// <summary> Id for the library.</summary>
 		internal const string LibraryGuid = "6CAE0A24-8102-4070-A049-7AF0546E1419";
-
-		/// <summary>Gets an assembly attribute.</summary>
-		/// <typeparam name="T">Assembly attribute type.</typeparam>
-		/// <returns>The assembly attribute of type T.</returns>
-		internal static T Attribute<T>()
-			where T : Attribute
-		{
-			return typeof(AssemblyInfo).Assembly.GetCustomAttribute<T>();
-		}
 	}
 }

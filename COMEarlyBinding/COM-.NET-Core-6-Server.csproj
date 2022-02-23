@@ -1,10 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
+		<!--
+		Change the following tags so that this path 'C:\$(VSLocation)\Microsoft Visual Studio\$(VSVersion)\VC\Tools\MSVC\$(CLVersion)\bin\Hostx64\x64'
+		is valid for your Visual Studio installation (the path should lead to a cl.exe).
+		-->
+		<VSVersion>2022\Professional</VSVersion>
+		<VSLocation>Program Files</VSLocation>
 		<CLVersion>14.31.31103</CLVersion>
 		<DriveLetter>N:</DriveLetter>
 		<KitsVersion>10.0.19041.0</KitsVersion>
-		<VSVersion>2022\Professional</VSVersion>
-		<VSLocation>Program Files</VSLocation>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="AssemblyInfo.cs" />
@@ -19,7 +23,7 @@
 	</ItemGroup>
 	<PropertyGroup>
 		<AssemblyName>$(MSBuildProjectName)$(Platform)</AssemblyName>
-		<Description>Com Test Library</Description>
+		<Description>Simple COM Project</Description>
 		<EnableComHosting>true</EnableComHosting>
 
 		<EnableDefaultItems>false</EnableDefaultItems>
@@ -46,9 +50,8 @@
 		<WriteLinesToFile File="$(TargetDir)midloptions.txt" Overwrite="true" Lines="$(MidlOptions)" />
 		<Exec IgnoreExitCode="true" Command="subst $(DriveLetter) &quot;C:\$(VSLocation)\Microsoft Visual Studio\$(VSVersion)\VC\Tools\MSVC\$(CLVersion)\bin\Hostx64\x64&quot;" />
 		<Exec command="&quot;$(PathKitsBin)\x64\midl.exe&quot; @$(TargetDir)midloptions.txt&quot;" />
-		<!-- The .dll and .tlb can be registered automatically if this <Exec> tag is not commented out.
-		<Exec command="regsvr32 /s &quot;$(TargetDir)$(TargetName).comhost.dll&quot;" />
-		-->
+		<!-- The .dll and .tlb can be registered automatically if this <Exec> tag is not commented out. -->
+		<!-- <Exec command="regsvr32 /s &quot;$(TargetDir)$(TargetName).comhost.dll&quot;" /> -->
 	</Target>
 
 	<Target AfterTargets="BeforeClean" BeforeTargets="CoreClean" Name="RegClean">
