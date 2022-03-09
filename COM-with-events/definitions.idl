@@ -1,26 +1,26 @@
 [
-	uuid(68FE1AA9-B7F7-4F00-9D2E-136EE2514CC7),
+	uuid(8E069232-C779-4C11-9442-BBD988DA7900),
 	version(1.0),
-	helpstring("LessSimpleComObjectTLB")
+	helpstring("ComplexComObjectTLB")
 ]
-library LessSimpleComObjectTLB
+library ComplexComObjectTLB
 {
 	importlib("STDOLE2.TLB");
 
 	// Forward declare all types defined in this typelib
-	interface ILessSimpleComObject;
+	interface IComplexComObject;
 	interface IResult;
 
 	[
 		odl,
-		uuid(98BF9D9A-14B1-49E6-A7E3-E2064EE6BDE9),
+		uuid(64D7BF36-CB33-4137-9EDA-23C0AC49FED7),
 		dual,
 		oleautomation,
 		nonextensible,
-		helpstring("ILessSimpleComObject"),
+		helpstring("IComplexComObject"),
 		object
 	]
-	interface ILessSimpleComObject : IDispatch
+	interface IComplexComObject : IDispatch
 	{
 		[
 			id(1),
@@ -40,17 +40,17 @@ library LessSimpleComObjectTLB
 	};
 
 	[
-		uuid(DE468003-94B8-495E-8FDC-FAC4A86AA11C),
-		helpstring("LessSimpleComObject")
+		uuid(6CE0CB27-9189-4B2A-9F0A-04CEEBB5CC43),
+		helpstring("ComplexComObject")
 	]
-	coclass LessSimpleComObject
+	coclass ComplexComObject
 	{
-		[default] interface ILessSimpleComObject;
+		[default] interface IComplexComObject;
 	};
 
 	[
 		odl,
-		uuid(B4A48873-67CE-4F6A-840B-540301C561B7),
+		uuid(949298B1-947B-440C-AD01-75C7D0D10334),
 		dual,
 		oleautomation,
 		nonextensible,
@@ -68,7 +68,7 @@ library LessSimpleComObjectTLB
 	};
 
 	[
-		uuid(EE4EAE34-E2CC-46AF-B6F6-FF4B79513324),
+		uuid(4193FE51-B851-4267-A817-54725BA29954),
 		helpstring("Result")
 	]
 	coclass Result
