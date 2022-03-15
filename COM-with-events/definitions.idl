@@ -40,12 +40,28 @@ library ComplexComObjectTLB
 	};
 
 	[
+		uuid(C19F4105-BD46-4903-A87E-4DC506A78EFF),
+		helpstring("AdditionDoneDelegate")
+	]
+	dispinterface AdditionDoneDelegate
+	{
+		properties:
+		methods:
+			[
+				id(1),
+				helpstring("AdditionDoneEvent")
+			]
+			HRESULT Event1();
+	};
+
+	[
 		uuid(6CE0CB27-9189-4B2A-9F0A-04CEEBB5CC43),
 		helpstring("ComplexComObject")
 	]
 	coclass ComplexComObject
 	{
 		[default] interface IComplexComObject;
+		[default, source] dispinterface AdditionDoneDelegate;
 	};
 
 	[

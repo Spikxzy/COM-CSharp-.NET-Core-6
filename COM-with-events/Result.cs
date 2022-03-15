@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
-namespace COM_obj_with_events
+namespace COM_with_events
 {
     [ComVisible(true)]
     [Guid(AssemblyInfo.ResultClassGuid)]

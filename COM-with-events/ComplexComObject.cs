@@ -1,4 +1,4 @@
-﻿namespace COM_obj_with_events
+﻿namespace COM_with_events
 {
     using System;
     using System.Runtime.InteropServices;
@@ -11,6 +11,7 @@
     {
         public IResult Addition(double firstValue, double secondValue)
         {
+            AdditionDone?.Invoke();
             return new Result(firstValue + secondValue);
         }
 
@@ -18,5 +19,7 @@
         {
             return "Hello World!";
         }
+
+        public event AdditionDoneDelegate AdditionDone;
     }
 }

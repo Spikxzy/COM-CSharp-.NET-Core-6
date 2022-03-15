@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace COM_with_events
 {
-    [ComImport]
-    [Guid(AssemblyInfo.ResultInterfaceGuid)]
+    [Guid(AssemblyInfo.EventsGuid)]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IResult
+    [ComVisible(true)]
+    public interface COMEvents
     {
-        double ReturnResult();
+        void AdditionDone();
     }
 }
